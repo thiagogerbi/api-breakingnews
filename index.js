@@ -1,12 +1,11 @@
 const express = require('express')
-const app = express()
 const port = 3000
+const userRoute = require('./src/routes/user.route')
 
+const app = express()
 
-app.get('/soma', (req, res) => {
-    const soma = 100 + 1
-    res.json(soma)
-  })
+app.use("/soma", userRoute)
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
